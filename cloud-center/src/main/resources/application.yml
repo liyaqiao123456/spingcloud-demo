@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: cloud-center
+  main:
+    allow-bean-definition-overriding: true #当遇到同样名字的时候，是否允许覆盖注册
+
+server:
+  port: 1001 #启动端口
+
+eureka:
+  instance:
+    prefer-ip-address: true         #以IP地址注册到服务中心
+  client:
+    registerWithEureka: false     #false:不作为一个客户端注册到注册中心
+    fetchRegistry: false          #为true时，可以启动，但报异常：Cannot execute request on any known server
+    service-url:
+      defaultZone: localhost:1001/eureka  # 加密配置
